@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Desk TI - Prefeitura de Feijó/AC</title>
+    <meta name="description" content="Sistema de Atendimento de TI da Prefeitura Municipal de Feijó/AC - Registre suas solicitações de suporte técnico de forma rápida e eficiente" />
+    <meta name="author" content="Micronet Informática" />
+    <meta name="keywords" content="service desk, TI, suporte técnico, prefeitura, Feijó, Acre, atendimento, solicitações" />
+    
+    <!-- Fontes tecnológicas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Service Desk TI - Prefeitura de Feijó/AC" />
+    <meta property="og:description" content="Sistema de Atendimento de TI da Prefeitura Municipal de Feijó/AC" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var useDark = saved ? saved === 'dark' : true; // padrão: escuro
+          if (useDark || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

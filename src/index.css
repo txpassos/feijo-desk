@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Service Desk Design System - Liquid Glass & Green Gradient Theme
+All colors MUST be HSL. Based on Micronet logo green gradient.
+*/
+
+@layer base {
+  :root {
+    /* Light theme - Strong Purple with Dark Background */
+    --background: 260 25% 12%;
+    --foreground: 270 100% 95%;
+
+    /* Cards with dark purple glow */
+    --card: 260 20% 15%;
+    --card-foreground: 270 100% 95%;
+
+    --popover: 260 20% 15%;
+    --popover-foreground: 270 100% 95%;
+
+    /* Primary strong purple */
+    --primary: 270 100% 60%;
+    --primary-light: 280 100% 70%;
+    --primary-dark: 260 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary dark tones */
+    --secondary: 260 20% 18%;
+    --secondary-foreground: 270 100% 90%;
+
+    /* Muted purple effects */
+    --muted: 260 15% 20%;
+    --muted-foreground: 270 50% 70%;
+
+    /* Accent strong purple */
+    --accent: 270 100% 25%;
+    --accent-foreground: 270 100% 90%;
+
+    /* Destructive states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Dark borders with purple tint */
+    --border: 260 20% 25%;
+    --input: 260 20% 20%;
+    --ring: 270 100% 60%;
+
+    --radius: 1rem;
+
+    /* Strong purple gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 60%), hsl(280 100% 70%));
+    --gradient-glass: linear-gradient(135deg, hsla(270, 80%, 20%, 0.8), hsla(280, 70%, 15%, 0.6));
+    --gradient-bg: linear-gradient(135deg, hsl(260 25% 12%), hsl(270 30% 10%));
+    
+    /* Strong purple shadows */
+    --shadow-glass: 0 8px 32px hsla(270, 100%, 60%, 0.3);
+    --shadow-glass-hover: 0 12px 40px hsla(270, 100%, 60%, 0.4);
+    
+    /* Sidebar light theme (purple dark) */
+    --sidebar-background: 260 20% 15%;
+    --sidebar-foreground: 270 100% 95%;
+    --sidebar-primary: 270 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 100% 25%;
+    --sidebar-accent-foreground: 270 100% 90%;
+    --sidebar-border: 260 20% 25%;
+    --sidebar-ring: 270 100% 60%;
+  }
+
+  .dark {
+    /* Dark glass morphism */
+    --background: 210 20% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 20% 10% / 0.7;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 20% 10% / 0.9;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 152 70% 45%;
+    --primary-light: 152 60% 55%;
+    --primary-dark: 152 80% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 152 30% 15%;
+    --accent-foreground: 152 60% 75%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 20% / 0.3;
+    --input: 210 20% 15% / 0.5;
+    --ring: 152 70% 45%;
+    
+    --gradient-bg: linear-gradient(135deg, hsl(210 20% 8%), hsl(200 20% 10%));
+    /* Override gradients for dark (green) theme to avoid purple bleed */
+    --gradient-primary: linear-gradient(135deg, hsl(152 70% 45%), hsl(152 60% 55%));
+    --gradient-glass: linear-gradient(135deg, hsla(152, 50%, 20%, 0.8), hsla(152, 45%, 15%, 0.6));
+    --shadow-glass: 0 8px 32px hsla(152, 70%, 45%, 0.2);
+    --shadow-glass-hover: 0 12px 40px hsla(152, 70%, 45%, 0.25);
+    
+    --sidebar-background: 210 20% 10% / 0.8;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 152 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 30% 15%;
+    --sidebar-accent-foreground: 152 60% 75%;
+    --sidebar-border: 210 20% 20% / 0.3;
+    --sidebar-ring: 152 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Glass morphism utilities */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-hover:hover {
+    box-shadow: var(--shadow-glass-hover);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Privacy notice animations */
+  @keyframes pulse-border {
+    0%, 100% {
+      border-color: rgb(239, 68, 68);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+    50% {
+      border-color: rgb(220, 38, 38);
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.8);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(251, 146, 60, 0.8));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(251, 146, 60, 1));
+    }
+  }
+  
+  .animate-pulse-border {
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+}
