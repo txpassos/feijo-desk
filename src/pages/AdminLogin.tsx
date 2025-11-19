@@ -5,12 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import logoImage from "@/assets/micronet-logo.png";
+import { API_SERVER } from "@/utils/api";
 
 interface AdminLoginProps {
   onLogin: () => void;
 }
 
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = API_SERVER;
 
 const AdminLogin = ({ onLogin }: AdminLoginProps) => {
   const [password, setPassword] = useState("");

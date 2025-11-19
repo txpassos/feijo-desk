@@ -1,7 +1,8 @@
 // src/hooks/useSupportChat.ts
 import { useState, useEffect, useCallback } from "react";
+import { API_SERVER } from "@/utils/api";
 
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = API_SERVER;
 
 export interface SupportMessage {
   id: string;

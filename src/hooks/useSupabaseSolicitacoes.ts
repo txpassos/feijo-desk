@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { API_SERVER } from "@/utils/api";
 
 export interface Solicitacao {
   id?: string;
@@ -19,7 +20,7 @@ export interface Solicitacao {
   locked?: boolean;
 }
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = API_SERVER;
 
 export const useSupabaseSolicitacoes = () => {
   const [solicitacoes, setSolicitacoes] = useState<Solicitacao[]>([]);

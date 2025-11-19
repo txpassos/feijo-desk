@@ -11,8 +11,9 @@ import {
   TabsContent,
 } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
+import { API_SERVER } from "@/utils/api";
 
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = API_SERVER;
 
 interface SupportChat {
   id: string;

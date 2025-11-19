@@ -19,8 +19,9 @@ import { useToast } from "@/hooks/use-toast";
 
 import { generatePDFComprovante } from "@/components/PDFGenerator";
 import { useSupabaseChat } from "@/hooks/useSupabaseChat"; // já convertido para API local
+import { API_SERVER } from "@/utils/api";
 
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = API_SERVER;
 
 interface ChatMessage {
   id: string;

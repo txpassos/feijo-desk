@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { API_SERVER } from "@/utils/api";
 
 interface ChatMessage {
   id: string;
@@ -11,7 +12,7 @@ interface ChatMessage {
   read: boolean;
 }
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = API_SERVER;
 
 export const useSupabaseChat = (solicitacaoId?: string) => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
